@@ -473,7 +473,7 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			{/* ── Testimonials ─────────────────────────────────────────────────── */}
+					{/* ── Testimonials ─────────────────────────────────────────────────── */}
 			<section style={{ padding: "80px 24px", maxWidth: 1000, margin: "0 auto" }}>
 				<div style={{ textAlign: "center", marginBottom: 48 }}>
 					<p style={{
