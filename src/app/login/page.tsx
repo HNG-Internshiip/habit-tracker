@@ -19,7 +19,11 @@ export default function LoginForm() {
 		setError(null);
 		setLoading(true);
 		const result = logIn(email, password);
-		if (!result.ok) { setError(result.error); setLoading(false); return; }
+		if (!result.ok) {
+  setError(result.error ?? "Something went wrong");
+  setLoading(false);
+  return;
+}
 		router.replace('/dashboard');
 	}
 

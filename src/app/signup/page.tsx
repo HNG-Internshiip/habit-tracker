@@ -19,7 +19,11 @@ export default function SignupForm() {
 		setError(null);
 		setLoading(true);
 		const result = signUp(email, password);
-		if (!result.ok) { setError(result.error); setLoading(false); return; }
+		if (!result.ok) {
+  setError(result.error ?? "Signup failed");
+  setLoading(false);
+  return;
+}
 		router.replace('/dashboard');
 	}
 

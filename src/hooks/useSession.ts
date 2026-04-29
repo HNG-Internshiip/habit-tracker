@@ -1,18 +1,25 @@
-// ── src/hooks/useSession.ts ──────────────────────────────────────────────────
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import type { Session } from '@/types/auth';
-import { getSession } from '@/lib/auth';
+import { useEffect, useState } from "react";
+import type { Session } from "@/types/auth";
+import { getSession } from "@/lib/auth";
 
 export function useSession() {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setSession(getSession());
-    setLoading(false);
+    const sync = () => {
+      setSession(getSession());
+      setLoading(false);
+    };
+
+    sync();
+
+    window.addEventListener("storage", sync);
+
+    return () => window.removeEventListener("storage", sync);
   }, []);
 
-  return { session, loading, setSession };
+  return { session, loading };
 }

@@ -1,12 +1,11 @@
-// ── public/manifest.json ─────────────────────────────────────────────────────
 {
   "name": "Habit Tracker",
   "short_name": "Habits",
   "description": "Track your daily habits and build streaks",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f9fafb",
-  "theme_color": "#6366f1",
+  "background_color": "#111114",
+  "theme_color": "#111114",
   "orientation": "portrait",
   "icons": [
     {

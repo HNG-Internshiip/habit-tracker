@@ -28,7 +28,7 @@ export default function LoginForm() {
     const result = logIn(email, password);
 
     if (!result.ok) {
-      setError(result.error);
+      setError(result.error ?? "Something went wrong. Please retry.");
       setSubmitting(false);
       return;
     }
