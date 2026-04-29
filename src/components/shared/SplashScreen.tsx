@@ -31,6 +31,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
 
 	return (
 		<div
+			data-testid="splash-screen"
 			className="fixed inset-0 flex flex-col items-center justify-center overflow-hidden"
 			style={{
 				background: "#111114",
