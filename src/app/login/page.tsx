@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { logIn } from '@/lib/auth';
 import { Mail, Lock, AlertCircle } from 'lucide-react';
 import AppLogo from '@/components/shared/AppLogo';
+import HomeButton from "@/components/shared/HomeButton";
 
 export default function LoginForm() {
 	const router = useRouter();
@@ -20,17 +21,16 @@ export default function LoginForm() {
 		setLoading(true);
 		const result = logIn(email, password);
 		if (!result.ok) {
-  setError(result.error ?? "Invalid email or password");
-  setLoading(false);
-  return;
-}
+			setError(result.error ?? "Invalid email or password");
+			setLoading(false);
+			return;
+		}
 		router.replace('/dashboard');
 	}
 
 	return (
-		<div className="animate-fade-up w-full">
-			{/* Centered logo + title */}
-			<div className="flex flex-col items-center mb-8">
+		<div className="min-h-screen flex flex-col pb-28">
+			<div className="animate-fade-up flex flex-col items-center pt-42 mb-8">
 				<AppLogo size={56} className="mb-4" />
 				<h1 className="text-2xl font-extrabold text-[var(--text)] tracking-tight">
 					Welcome back
@@ -119,6 +119,8 @@ export default function LoginForm() {
 					</Link>
 				</p>
 			</div>
+
+			<HomeButton />
 		</div>
 	);
 }
