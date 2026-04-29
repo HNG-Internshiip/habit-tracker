@@ -51,7 +51,7 @@ export function logIn(email: string, password: string) {
 			u.password === password
 	);
 
-	if (!user) return { ok: false, error: "Invalid credentials" };
+	if (!user) return { ok: false, error: "Invalid email or password" };
 
 	const session = { userId: user.id, email: user.email };
 	saveSession(session);

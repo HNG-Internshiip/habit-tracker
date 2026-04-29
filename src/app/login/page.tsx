@@ -20,7 +20,7 @@ export default function LoginForm() {
 		setLoading(true);
 		const result = logIn(email, password);
 		if (!result.ok) {
-  setError(result.error ?? "Something went wrong");
+  setError(result.error ?? "Invalid email or password");
   setLoading(false);
   return;
 }

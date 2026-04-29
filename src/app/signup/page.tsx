@@ -20,7 +20,7 @@ export default function SignupForm() {
 		setLoading(true);
 		const result = signUp(email, password);
 		if (!result.ok) {
-  setError(result.error ?? "Signup failed");
+  setError(result.error ?? "Invalid email or password");
   setLoading(false);
   return;
 }
